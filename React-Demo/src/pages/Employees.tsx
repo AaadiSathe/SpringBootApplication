@@ -16,7 +16,7 @@ const Employees = () => {
 
     const getAllEmployees = async () => {
         try {
-            const response = await axios.get("http://localhost:8081/sqlbe/api/v1/employee/getAll");
+            const response = await axios.get("http://13.233.232.244:8081/sqlbe/api/v1/employee/getAll");
             if (response.status === 200) {
                 setEmployees(response.data);
             }
@@ -27,7 +27,7 @@ const Employees = () => {
 
     const getNextCode = async () => {
         try {
-            const response = await axios.get("http://localhost:8081/sqlbe/api/v1/employee/getNextCode");
+            const response = await axios.get("http://13.233.232.244:8081/sqlbe/api/v1/employee/getNextCode");
             if (response.status === 200) {
                 setNextEmployeeCode(response.data);
             }
@@ -52,7 +52,7 @@ const Employees = () => {
         const employeeJSON = JSON.stringify(employeeObject);
 
         try {
-            const response = await axios.post("http://localhost:8081/sqlbe/api/v1/employee/save", employeeJSON, {
+            const response = await axios.post("http://13.233.232.244:8081/sqlbe/api/v1/employee/save", employeeJSON, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -82,7 +82,7 @@ const Employees = () => {
         const employeeJSON = JSON.stringify(employeeObject);
 
         try {
-            const response = await axios.put("http://localhost:8081/sqlbe/api/v1/employee/update", employeeJSON, {
+            const response = await axios.put("http://13.233.232.244:8081/sqlbe/api/v1/employee/update", employeeJSON, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -105,7 +105,7 @@ const Employees = () => {
         }
 
         try {
-            const response = await axios.delete(`http://localhost:8081/sqlbe/api/v1/employee/delete/${employeeCode}`);
+            const response = await axios.delete(`http://13.233.232.244:8081/sqlbe/api/v1/employee/delete/${employeeCode}`);
             if (response.status === 200) {
                 alert('Employee Deleted!');
                 window.location.reload();
