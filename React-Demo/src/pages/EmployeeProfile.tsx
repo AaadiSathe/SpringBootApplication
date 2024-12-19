@@ -8,7 +8,7 @@ const EmployeeProfile = () => {
 
     const getEmployee = async () => {
         try {
-            const response = await axios.get(`http://localhost:8081/sqlbe/api/v1/employee/get/${employeeCode}`);
+            const response = await axios.get(`http://13.233.232.244:8081/sqlbe/api/v1/employee/get/${employeeCode}`);
             if (response.status === 200) {
                 setEmployee(response.data);
             }
